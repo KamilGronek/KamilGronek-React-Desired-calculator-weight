@@ -33,7 +33,7 @@ class Results extends Component {
     return parseInt(this.props.desiredWeight) > 30;
   };
 
-  validHeigt = () => {
+  validHeight = () => {
     return parseInt(this.props.height) > 150;
   };
 
@@ -42,7 +42,7 @@ class Results extends Component {
       this.validCalendarDate() &&
       this.validInitialWeight() &&
       this.validDesiredWeight() &&
-      this.validHeigt()
+      this.validHeight()
     );
   };
 
@@ -62,7 +62,6 @@ class Results extends Component {
 
     const { result, emptyTitles } = this.state;
 
-    console.log(looseWeight);
     const loosedWeight = looseWeight > 0;
     const text = loosedWeight ? "loose" : "gain";
     const gainedWeight = gainWeight > 0;
