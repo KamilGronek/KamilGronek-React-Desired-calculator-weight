@@ -39,6 +39,7 @@ body {
 .button_position {
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .progress_section_data {
