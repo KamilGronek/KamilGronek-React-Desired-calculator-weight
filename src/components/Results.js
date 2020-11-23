@@ -7,13 +7,6 @@ class Results extends Component {
     this.state = {
       result: "0",
       emptyTitles: false,
-
-      empty: "",
-
-      errors: {
-        description: false,
-        value: false,
-      },
     };
   }
 
@@ -72,6 +65,7 @@ class Results extends Component {
     const oneWeek = 7;
 
     const WeightPerDay = Math.abs(KilogPerDay).toFixed(2);
+
     const KiloPerWeek = Math.abs(
       looseWeight / (numbersOfDays / oneWeek)
     ).toFixed(2);

@@ -25,7 +25,7 @@ body {
 }
 
 .calculator_content {
-  max-width: 520px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   margin: 50px auto;
@@ -34,6 +34,11 @@ body {
 .progress_session {
   display: flex;
   flex-direction: column;
+}
+
+.button_position {
+  display: flex;
+  justify-content: center;
 }
 
 .progress_section_data {
@@ -64,4 +69,14 @@ body {
 
 .results {
   margin-top: 10px;
+}
+
+@media (max-width: 720px) {
+  .calculator_content {
+    width: 300px;
+  }
+  .button {
+    font-size: 15px;
+    font-weight: bold;
+  }
 }

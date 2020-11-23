@@ -5,6 +5,7 @@ import Article from "./Article";
 class Main extends Component {
   render() {
     const {
+      handleChangeEvent,
       initialWeight,
       desiredWeight,
       height,
@@ -14,6 +15,7 @@ class Main extends Component {
       desiredBMI,
       currentDate,
       endDate,
+      handleCountButton,
       numbersOfDays,
       getCurrentBmiText,
       getDesiredBmiText,
@@ -25,16 +27,13 @@ class Main extends Component {
         <main className="calculator_content">
           <section className="progress_session">
             <Article
-              handleChangeEvent={this.props.handleChangeEvent}
+              handleChangeEvent={handleChangeEvent}
               initialWeight={initialWeight}
               desiredWeight={desiredWeight}
               height={height}
               currentDate={currentDate}
               endDate={endDate}
             />
-            <button onClick={this.props.handleCountButton} className="button">
-              Count
-            </button>
             <Results
               looseWeight={looseWeight}
               gainWeight={gainWeight}
@@ -51,6 +50,11 @@ class Main extends Component {
               isClickedCountButton={isClickedCountButton}
             />
           </section>
+          <div className="button_position">
+            <button onClick={handleCountButton} className="button ">
+              Count
+            </button>
+          </div>
         </main>
       </>
     );

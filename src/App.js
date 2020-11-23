@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "./App.css";
 import Main from "./components/Main";
 
@@ -7,6 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.isClickedCountButton = this.isClickedCountButton.bind(this);
+
     const today = new Date();
     const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
