@@ -110,7 +110,16 @@ class Results extends Component {
                   <p className="resultParagraf">
                     {"You should"} {changeWeight ? text : ""}{" "}
                     <strong>
-                      {changeWeight ? KiloPerWeek : ""} {"kg"}
+                      {numbersOfDays < 7
+                        ? loosedWeight
+                          ? Math.abs(looseWeight)
+                          : "" || gainedWeight
+                          ? Math.abs(gainWeight)
+                          : ""
+                        : changeWeight
+                        ? KiloPerWeek
+                        : ""}
+                      {" kg"}
                     </strong>{" "}
                     {"per week"}
                   </p>

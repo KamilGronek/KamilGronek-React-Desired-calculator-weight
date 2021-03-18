@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import Main from "./components/Main";
+// import Main from "./components/Main";
+import Results from "./components/Results";
+import Article from "./components/Article";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.isClickedCountButton = this.isClickedCountButton.bind(this);
 
     const today = new Date();
     const tomorrow = new Date();
@@ -50,7 +51,7 @@ class App extends Component {
     });
   };
 
-  isClickedCountButton() {
+  isClickedCountButton =() => {
     return this.state.clickedCountButton;
   }
 
@@ -155,24 +156,39 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">Desired web calculator</header>
-        <Main
-          handleCountButton={this.handleCountButton}
-          handleChangeEvent={this.handleChangeEvent}
-          initialWeight={initialWeight}
-          desiredWeight={desiredWeight}
-          height={height}
-          looseWeight={looseWeight}
-          gainWeight={gainWeight}
-          currentBMI={currentBMI}
-          desiredBMI={desiredBMI}
-          currentDate={currentDate}
-          endDate={endDate}
-          numbersOfDays={numbersOfDays}
-          getCurrentBmiText={this.getCurrentBmiText}
-          getDesiredBmiText={this.getDesiredBmiText}
-          isClickedCountButton={this.isClickedCountButton}
-        />
-      </div>
+        <main className="calculator_content">
+          <section className="progress_session">
+            <Article
+              handleChangeEvent={this.handleChangeEvent}
+              initialWeight={initialWeight}
+              desiredWeight={desiredWeight}
+              height={height}
+              currentDate={currentDate}
+              endDate={endDate}
+            />
+            <Results
+            looseWeight={looseWeight}
+            gainWeight={gainWeight}
+            initialWeight={initialWeight}
+            desiredWeight={desiredWeight}
+            height={height}
+            currentBMI={currentBMI}
+            desiredBMI={desiredBMI}
+            currentDate={currentDate}
+            endDate={endDate}
+            numbersOfDays={numbersOfDays}
+            getCurrentBmiText={this.getCurrentBmiText}
+            getDesiredBmiText={this.getDesiredBmiText}
+            isClickedCountButton={this.isClickedCountButton}
+            />
+           </section>
+          <div className="button_position">
+            <button onClick={this.handleCountButton} className="button ">
+              Count
+            </button>
+          </div>
+        </main>
+        </div>
     );
   }
 }
